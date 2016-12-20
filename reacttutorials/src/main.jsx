@@ -1,7 +1,7 @@
 var React = require('react');
 var ReactRouter = require('react-router');
 var ReactDOM = require('react-dom');
-var Home = require('./home');
+var Login = require('./login');
 var Stuff = require('./stuff');
 var Contact = require('./contact');
 var Custom = require('./custom');
@@ -60,7 +60,7 @@ ReactDOM.render(
 ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
-      <IndexRoute component={Home} />
+      <IndexRoute component={Login} />
       <Route path="contact" >
         <IndexRoute component={Contact} />
         <Route path="custom" component={Custom} />

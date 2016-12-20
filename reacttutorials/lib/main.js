@@ -57,7 +57,7 @@
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(2);
 	var ReactDOM = __webpack_require__(66);
-	var Home = __webpack_require__(241);
+	var Login = __webpack_require__(241);
 	var Stuff = __webpack_require__(242);
 	var Contact = __webpack_require__(243);
 	var Custom = __webpack_require__(244);
@@ -136,7 +136,7 @@
 	  React.createElement(
 	    Route,
 	    { path: '/', component: App },
-	    React.createElement(IndexRoute, { component: Home }),
+	    React.createElement(IndexRoute, { component: Login }),
 	    React.createElement(
 	      Route,
 	      { path: 'contact' },
@@ -27172,61 +27172,95 @@
 /* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 	
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	var React = __webpack_require__(1);
+	var ReactRouter = __webpack_require__(2);
+	var browserHistory = ReactRouter.browserHistory;
 	
-	var Home = (function (_React$Component) {
-	      _inherits(Home, _React$Component);
+	var Login = (function (_React$Component) {
+	      _inherits(Login, _React$Component);
 	
-	      function Home() {
-	            _classCallCheck(this, Home);
+	      function Login() {
+	            _classCallCheck(this, Login);
 	
-	            _get(Object.getPrototypeOf(Home.prototype), "constructor", this).apply(this, arguments);
+	            _get(Object.getPrototypeOf(Login.prototype), 'constructor', this).call(this);
+	            this.state = { username: "", userpass: "", isValidLogin: false };
 	      }
 	
-	      _createClass(Home, [{
-	            key: "render",
+	      _createClass(Login, [{
+	            key: 'render',
 	            value: function render() {
 	                  return React.createElement(
-	                        "div",
-	                        { className: "wrapper" },
+	                        'div',
+	                        { className: 'wrapper' },
 	                        React.createElement(
-	                              "form",
-	                              { className: "form-signin" },
+	                              'form',
+	                              { className: 'form-signin', onSubmit: this.handleLoginSubmit.bind(this) },
 	                              React.createElement(
-	                                    "div",
+	                                    'div',
 	                                    null,
 	                                    React.createElement(
-	                                          "h2",
-	                                          { className: "form-signin-heading" },
-	                                          "FA Messenger"
+	                                          'h2',
+	                                          { className: 'form-signin-heading' },
+	                                          'FA Messenger'
 	                                    ),
-	                                    React.createElement("input", { type: "text", className: "form-control", name: "username", placeholder: "Email Address", required: true }),
-	                                    React.createElement("input", { type: "password", className: "form-control", name: "password", required: true }),
+	                                    React.createElement('input', { type: 'text', className: 'form-control', name: 'username', placeholder: 'Email Address', required: true, onChange: this.handleNameChange.bind(this) }),
+	                                    React.createElement('input', { type: 'password', className: 'form-control', name: 'password', required: true, onChange: this.handlePasswordChange.bind(this) }),
 	                                    React.createElement(
-	                                          "button",
-	                                          { className: "btn btn-lg btn-primary btn-block", type: "submit" },
-	                                          "Login"
-	                                    )
+	                                          'button',
+	                                          { className: 'btn btn-lg btn-primary btn-block', type: 'submit' },
+	                                          'Login'
+	                                    ),
+	                                    this.state.isValidLogin
 	                              )
 	                        )
 	                  );
 	            }
+	      }, {
+	            key: 'handleLoginSubmit',
+	            value: function handleLoginSubmit(e) {
+	                  console.log(this.state);
+	                  if (this.state.username === "mantu.nigam" && this.state.userpass === "test") {
+	                        this.setState({
+	                              isValidLogin: true
+	                        });
+	                        this.props.history.push('/contact');
+	                  } else {
+	                        this.setState({
+	                              isValidLogin: false
+	                        });
+	                  }
+	                  e.preventDefault();
+	            }
+	      }, {
+	            key: 'handlePasswordChange',
+	            value: function handlePasswordChange(e) {
+	                  this.setState({
+	                        userpass: e.target.value
+	                  });
+	            }
+	      }, {
+	            key: 'handleNameChange',
+	            value: function handleNameChange(e) {
+	                  this.setState({
+	                        username: e.target.value
+	                  });
+	            }
 	      }]);
 	
-	      return Home;
+	      return Login;
 	})(React.Component);
 	
-	module.exports = Home;
+	module.exports = Login;
 
 /***/ },
 /* 242 */
@@ -27308,23 +27342,24 @@
 	  _createClass(Contact, [{
 	    key: 'render',
 	    value: function render() {
+	      console.log(this, 'mantu');
 	      return React.createElement(
 	        'div',
-	        null,
+	        { className: 'app-content' },
 	        React.createElement(
-	          'h2',
-	          null,
-	          'GOT QUESTIONS?'
+	          'a',
+	          { href: '#', className: 'off-screen-toggle-btn', 'data-target': '.app-content' },
+	          React.createElement('i', { className: 'glyphicon glyphicon-align-justify' })
 	        ),
 	        React.createElement(
-	          'p',
-	          null,
-	          'The easiest thing to do is post on our  ',
-	          React.createElement(
-	            Link,
-	            { to: 'contact/custom' },
-	            'forums'
-	          )
+	          Link,
+	          { to: 'contact/custom' },
+	          'forums'
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'app-content-body fade-in-up' },
+	          React.cloneElement(this.props.children, { siteData: this.props.siteData })
 	        )
 	      );
 	    }
