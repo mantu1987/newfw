@@ -60,6 +60,7 @@
 	var Login = __webpack_require__(241);
 	var Stuff = __webpack_require__(242);
 	var Contact = __webpack_require__(243);
+	var Container = __webpack_require__(245);
 	var Custom = __webpack_require__(244);
 	var browserHistory = ReactRouter.browserHistory;
 	var DefaultRoute = ReactRouter.DefaultRoute;
@@ -75,37 +76,17 @@
 	  function App() {
 	    _classCallCheck(this, App);
 	
-	    _get(Object.getPrototypeOf(App.prototype), 'constructor', this).apply(this, arguments);
+	    _get(Object.getPrototypeOf(App.prototype), 'constructor', this).call(this);
+	    console.log(this, "test user");
 	  }
 	
 	  _createClass(App, [{
 	    key: 'render',
 	    value: function render() {
-	      return(
-	        /* <div>
-	         <h1>Test</h1>
-	         <ul className="header">
-	           <li><Link activeClassName="active" to="/">Home</Link></li>
-	           <li><Link activeClassName="active" to="/stuff" >Stuff</Link></li>
-	           <li><Link activeClassName="active" to="/contact" >Contact</Link></li>
-	         </ul>
-	         <div className="content">
-	            {this.props.children}
-	         </div>
-	        </div>*/
-	        /*<div className="app-content">
-	          <a href="#" className="off-screen-toggle-btn" data-target=".app-content" >
-	            <i className="glyphicon glyphicon-align-justify"></i>
-	          </a>
-	           <div className="app-content-body fade-in-up" >
-	             {this.props.children}
-	          </div>
-	        </div>*/
-	        React.createElement(
-	          'div',
-	          null,
-	          this.props.children
-	        )
+	      return React.createElement(
+	        'div',
+	        null,
+	        this.props.children
 	      );
 	    }
 	  }]);
@@ -114,21 +95,6 @@
 	})(React.Component);
 	
 	var destination = document.querySelector("#root");
-	/*Plain App
-	ReactDOM.render(
-	  <App/>,
-	  document.getElementById('content')
-	);*/
-	
-	/*
-	ReactDOM.render(
-	  <div>
-	    <App/>
-	  </div>,
-	  destination
-	);*/
-	
-	//--with router
 	//http://stackoverflow.com/questions/34343085/react-router-creating-nested-routes-with-no-component-nesting
 	ReactDOM.render(React.createElement(
 	  Router,
@@ -139,9 +105,9 @@
 	    React.createElement(IndexRoute, { component: Login }),
 	    React.createElement(
 	      Route,
-	      { path: 'contact' },
+	      { path: 'contact', component: Container },
 	      React.createElement(IndexRoute, { component: Contact }),
-	      React.createElement(Route, { path: 'custom', component: Custom })
+	      React.createElement(Route, { path: ':custom', component: Custom })
 	    ),
 	    React.createElement(Route, { path: 'stuff', component: Stuff })
 	  )
@@ -27346,21 +27312,7 @@
 	      return React.createElement(
 	        'div',
 	        { className: 'app-content' },
-	        React.createElement(
-	          'a',
-	          { href: '#', className: 'off-screen-toggle-btn', 'data-target': '.app-content' },
-	          React.createElement('i', { className: 'glyphicon glyphicon-align-justify' })
-	        ),
-	        React.createElement(
-	          Link,
-	          { to: 'contact/custom' },
-	          'forums'
-	        ),
-	        React.createElement(
-	          'div',
-	          { className: 'app-content-body fade-in-up' },
-	          React.cloneElement(this.props.children, { siteData: this.props.siteData })
-	        )
+	        'temp'
 	      );
 	    }
 	  }]);
@@ -27401,7 +27353,7 @@
 	         return React.createElement(
 	            'div',
 	            null,
-	            'I am Custom Page'
+	            'Custom loaded now :)'
 	         );
 	      }
 	   }]);
@@ -27410,6 +27362,72 @@
 	})(React.Component);
 	
 	module.exports = Stuff;
+
+/***/ },
+/* 245 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var React = __webpack_require__(1);
+	var ReactRouter = __webpack_require__(2);
+	var Link = ReactRouter.Link;
+	var Router = ReactRouter.Router;
+	var Route = ReactRouter.Route;
+	var RouteHandler = ReactRouter.RouteHandler;
+	
+	var Container = (function (_React$Component) {
+	    _inherits(Container, _React$Component);
+	
+	    function Container() {
+	        _classCallCheck(this, Container);
+	
+	        _get(Object.getPrototypeOf(Container.prototype), 'constructor', this).call(this);
+	        console.log(this);
+	    }
+	
+	    _createClass(Container, [{
+	        key: 'render',
+	        value: function render() {
+	            console.log(this, 'mantu');
+	            return React.createElement(
+	                'div',
+	                { className: 'app-content' },
+	                React.createElement(
+	                    'a',
+	                    { href: '#', className: 'off-screen-toggle-btn', 'data-target': '.app-content' },
+	                    React.createElement('i', { className: 'glyphicon glyphicon-align-justify' })
+	                ),
+	                React.createElement(
+	                    Link,
+	                    { to: '/contact/custom' },
+	                    'forums'
+	                ),
+	                React.createElement(
+	                    'div',
+	                    { className: 'app-content-body fade-in-up' },
+	                    React.createElement(
+	                        'div',
+	                        null,
+	                        this.props.children
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return Container;
+	})(React.Component);
+	
+	module.exports = Container;
 
 /***/ }
 /******/ ]);

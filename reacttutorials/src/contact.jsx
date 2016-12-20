@@ -10,13 +10,7 @@ class Contact extends React.Component {
     console.log(this,'mantu');
     return (
       <div className="app-content">
-        <a href="#" className="off-screen-toggle-btn" data-target=".app-content" >
-          <i className="glyphicon glyphicon-align-justify"></i>
-        </a>
-          <Link to="contact/custom" >forums</Link>
-        <div className="app-content-body fade-in-up" >
-          {React.cloneElement(this.props.children, {siteData: this.props.siteData})}
-        </div>
+       temp
       </div>
     );
   }
