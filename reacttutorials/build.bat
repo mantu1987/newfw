@@ -1,0 +1,1 @@
+watch-run dir "src" npm run build
