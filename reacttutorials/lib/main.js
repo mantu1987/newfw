@@ -57,11 +57,11 @@
 	var React = __webpack_require__(1);
 	var ReactRouter = __webpack_require__(2);
 	var ReactDOM = __webpack_require__(66);
-	var browserHistory = ReactRouter.browserHistory;
 	var Home = __webpack_require__(241);
 	var Stuff = __webpack_require__(242);
 	var Contact = __webpack_require__(243);
 	var Custom = __webpack_require__(244);
+	var browserHistory = ReactRouter.browserHistory;
 	var DefaultRoute = ReactRouter.DefaultRoute;
 	var Link = ReactRouter.Link;
 	var Router = ReactRouter.Router;
@@ -81,48 +81,29 @@
 	  _createClass(App, [{
 	    key: 'render',
 	    value: function render() {
-	      return React.createElement(
-	        'div',
-	        null,
-	        React.createElement(
-	          'h1',
-	          null,
-	          'Test'
-	        ),
-	        React.createElement(
-	          'ul',
-	          { className: 'header' },
-	          React.createElement(
-	            'li',
-	            null,
-	            React.createElement(
-	              Link,
-	              { activeClassName: 'active', to: '/' },
-	              'Home'
-	            )
-	          ),
-	          React.createElement(
-	            'li',
-	            null,
-	            React.createElement(
-	              Link,
-	              { activeClassName: 'active', to: '/stuff' },
-	              'Stuff'
-	            )
-	          ),
-	          React.createElement(
-	            'li',
-	            null,
-	            React.createElement(
-	              Link,
-	              { activeClassName: 'active', to: '/contact' },
-	              'Contact'
-	            )
-	          )
-	        ),
+	      return(
+	        /* <div>
+	         <h1>Test</h1>
+	         <ul className="header">
+	           <li><Link activeClassName="active" to="/">Home</Link></li>
+	           <li><Link activeClassName="active" to="/stuff" >Stuff</Link></li>
+	           <li><Link activeClassName="active" to="/contact" >Contact</Link></li>
+	         </ul>
+	         <div className="content">
+	            {this.props.children}
+	         </div>
+	        </div>*/
+	        /*<div className="app-content">
+	          <a href="#" className="off-screen-toggle-btn" data-target=".app-content" >
+	            <i className="glyphicon glyphicon-align-justify"></i>
+	          </a>
+	           <div className="app-content-body fade-in-up" >
+	             {this.props.children}
+	          </div>
+	        </div>*/
 	        React.createElement(
 	          'div',
-	          { className: 'content' },
+	          null,
 	          this.props.children
 	        )
 	      );
@@ -132,17 +113,23 @@
 	  return App;
 	})(React.Component);
 	
-	var destination = document.querySelector("#content");
-	/*ReactDOM.render(
+	var destination = document.querySelector("#root");
+	/*Plain App
+	ReactDOM.render(
 	  <App/>,
 	  document.getElementById('content')
 	);*/
-	/*ReactDOM.render(
+	
+	/*
+	ReactDOM.render(
 	  <div>
 	    <App/>
 	  </div>,
 	  destination
 	);*/
+	
+	//--with router
+	//http://stackoverflow.com/questions/34343085/react-router-creating-nested-routes-with-no-component-nesting
 	ReactDOM.render(React.createElement(
 	  Router,
 	  { history: browserHistory },
@@ -27185,53 +27172,58 @@
 /* 241 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
-	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 	
-	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 	
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
-	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
 	var React = __webpack_require__(1);
 	
 	var Home = (function (_React$Component) {
-	   _inherits(Home, _React$Component);
+	      _inherits(Home, _React$Component);
 	
-	   function Home() {
-	      _classCallCheck(this, Home);
+	      function Home() {
+	            _classCallCheck(this, Home);
 	
-	      _get(Object.getPrototypeOf(Home.prototype), 'constructor', this).apply(this, arguments);
-	   }
-	
-	   _createClass(Home, [{
-	      key: 'render',
-	      value: function render() {
-	         return React.createElement(
-	            'div',
-	            null,
-	            React.createElement(
-	               'h2',
-	               null,
-	               'HELLO'
-	            ),
-	            React.createElement(
-	               'p',
-	               null,
-	               'Mantu'
-	            ),
-	            React.createElement(
-	               'p',
-	               null,
-	               'Duis a turpis sed lacus dapibus elementum sed eu lectus.'
-	            )
-	         );
+	            _get(Object.getPrototypeOf(Home.prototype), "constructor", this).apply(this, arguments);
 	      }
-	   }]);
 	
-	   return Home;
+	      _createClass(Home, [{
+	            key: "render",
+	            value: function render() {
+	                  return React.createElement(
+	                        "div",
+	                        { className: "wrapper" },
+	                        React.createElement(
+	                              "form",
+	                              { className: "form-signin" },
+	                              React.createElement(
+	                                    "div",
+	                                    null,
+	                                    React.createElement(
+	                                          "h2",
+	                                          { className: "form-signin-heading" },
+	                                          "FA Messenger"
+	                                    ),
+	                                    React.createElement("input", { type: "text", className: "form-control", name: "username", placeholder: "Email Address", required: true }),
+	                                    React.createElement("input", { type: "password", className: "form-control", name: "password", required: true }),
+	                                    React.createElement(
+	                                          "button",
+	                                          { className: "btn btn-lg btn-primary btn-block", type: "submit" },
+	                                          "Login"
+	                                    )
+	                              )
+	                        )
+	                  );
+	            }
+	      }]);
+	
+	      return Home;
 	})(React.Component);
 	
 	module.exports = Home;

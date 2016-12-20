@@ -1,0 +1,751 @@
+@media (min-width: 600px) {
+  .app-aside, .navbar-header, .app-aside-fixed .aside-wrap .navi-wrap > * {
+      /*width: 250px;*/
+      width: 236px;
+  }
+  .app-aside-fixed .aside-wrap .navi-wrap{
+    width: 267px;
+  }
+  .app-aside-fixed .aside-wrap{
+    width: 249px;
+    top: 0;
+  }
+  .navbar-collapse, .app-content, .app-footer{
+    /*margin-left:250px;*/
+    margin-left: 236px;
+  }
+
+}
+.message-text span.emoji-inner {
+  width: 80%;
+  height: 80%;
+  margin-top: 3px;
+}
+.conversations-user-details {
+  margin-top: 7px; 
+  display: inline-block;
+}
+.app-content-body{
+  padding-bottom: 0;
+}
+.app-content{
+  background-color: #fff;
+}
+.app-header-fixed{
+  padding-top: 0;
+}
+.bg-black{
+  background-color: #4C4C4C;
+  color: #fff;
+}
+.bg-black a{
+  color: #fff;
+}
+.bg-black .text-muted{
+  color: #fff !important;
+}
+.badge:empty{
+  display: block;
+}
+.highlight{
+  color: #01B3AF;
+}
+.message-text{
+  color:#3d3d3d;
+  line-height: 1.32857143;
+  word-wrap: break-word;
+}
+.strong{
+  font-weight: bold;
+  }
+.fullHeight{
+  height: 100%;
+}
+.default-page-search {
+  border-radius: 5px;
+  background: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #F7F6F7), color-stop(100%, #fff));
+  background: -moz-linear-gradient(top, #F7F6F7, #fff);
+}
+/* Sidebar */
+#profileActions{
+  z-index: 100;
+  position: absolute;
+  left: 200px;
+  top: 45px;
+}
+#profileActions button{
+  padding: 0;
+  background: 0;
+  border: 0;
+}
+#profileActions .fa-caret-right, #profileActions .fa-caret-down {
+    font-size: 20px;
+    color: #fff;
+    margin-left: -3px;
+    opacity: 0.7;
+}
+#profileActions .dropdown-menu {
+  border-radius: 5px;
+}
+.navSearchButton{
+  width: 30px;
+  fill : #fff;
+  height: 30px;
+  display: block;
+  color: #fff !important;
+}
+.divSearchUsers{
+    height: 206px;
+ /*   overflow-y: scroll;
+    overflow-x: hidden;*/
+  }
+  .divSearchUsers ul button {
+    text-transform: capitalize;
+  }
+  .logout {
+    float: right;
+    font-size: 20px;
+    margin-top: -2px;
+    cursor: pointer;
+    color: #fff;
+  }
+  .presenceIcon{
+    padding: 5px;
+    margin: -14px 0 0 5px;
+  }
+  .presenceIconPopup {
+    margin-top: 5px !important;
+  }
+  .bg-online{
+    background-color: #01B3AF;
+  }
+
+  .bg-incall{
+    background-color: red;
+  }
+  .bg-away {
+   background-color: #FFD453;
+
+  }
+  .fa-away{
+    color: #FFD453;
+  }
+  .fa-online{
+    color: #01B3AF;
+  }
+  .bg-offline {
+    color: #FFFFFF;
+  }
+  ul.conversationList .presenceIcon{
+    margin-top: 6px;
+  }
+  .unreadbadge {
+    color: #fff;
+    float: right;
+    font-size: 12px;
+    margin-top: 3px;
+    font-weight: bold;
+  }
+  li.hasUnreadMessage a{
+    font-weight: bold;
+    color: #F4F4F4 !important;
+  }
+  .icoCall{
+    cursor: pointer;
+    font-size: 27px;
+    margin-top: -24px;
+  }
+
+  .userActions i{
+    color: #fff;
+    /*margin-right: 5px;
+    font-size: 17px;*/
+    font-size: 14px;
+    cursor: pointer;
+
+  }
+.active .userActions .showInterval {
+  color: #FFFFFF;
+}
+.showInterval {
+    color: #C9C9C9;
+    font-size: 12px;
+}
+.userActions .fa-comment{
+    visibility: hidden;
+    padding: 3px 6px 3px 6px;
+}
+.userActions .fa-comment:hover {
+    background: #332d2d;
+}
+.userActions .fa-phone {
+    visibility: hidden;
+    padding: 3px 7px 3px 7px;
+}
+.userActions .fa-phone:hover {
+  background: #332d2d;
+}
+.userActions .fa-desktop {
+    visibility: hidden;
+    padding: 3px 6px 3px 6px;
+}
+.userActions .fa-desktop:hover {
+    background: #332d2d;
+}
+  nav ul li:hover .fa-comment{
+    visibility: visible;
+  }
+  nav ul li:hover .fa-phone{
+    visibility: visible;
+  }
+  nav ul li:hover .fa-desktop{
+    visibility: visible;
+  }
+  nav ul li:hover .showInterval{
+    display: none;
+  }
+
+  nav ul li.active:hover .showInterval{
+      display: none;
+  }
+
+  nav ul li.active .userActions{
+    visibility: visible;
+  }
+  .avatar i.busy{
+    background-color: red;
+  }
+  .redRibbon{
+    position: absolute;
+    top: 0;
+    padding: 15px 20px;
+    background-color: #F1555B;
+    color: #fff;
+    float: left;
+    display: block;
+    opacity: 0.85;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  .navi li{
+    cursor: pointer;
+  }
+  .navi li.active
+  {
+    background-color: #00B5B2 !important;
+    color: #fff !important;
+  }
+  .navi li.active a{
+    color: #fff !important;
+  }
+  .navi li.active .bg-online{
+    background-color: #fff;
+  }
+  #videoElements #remoteVideo{
+    width: 100px !important;
+    background-color: #000;
+  }
+  #videoElements #localVideo{
+    width: 100px !important;
+    background-color: #fff;
+  }
+.list-group-item{
+  border-radius: 0;
+}
+  .list-group-item.active
+  {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top-right-radius-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  .truncated-username {
+    width: 76%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin-left: 15px;
+  }
+  .userProfileSection a {
+    color: #C9C9C9 !important;
+    font-size: 12px;
+  }
+  .userProfileSection small i {
+    color: #C9C9C9 !important;
+    font-size: 11px;
+  }
+  .userStatus li.active .userProfileSection small i {
+    color: #FFFFFF !important;
+  }
+  .conversationList {
+    height: 100% !important;
+  }
+  .m-r-15, .conversationList li {
+    margin-right: 15px;
+  }
+  .m-l-15, .userActions, .conversationDisplayName {
+    margin-left: 15px;
+  }
+.conversationDisplayName {
+  color: #C9C9C9 !important;
+  font-size: 12px;
+}
+#sidebarDiv .list-group-item {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#sidebarDiv .list-group-item:first-child {
+  border-top-right-radius: 0;
+}
+#sidebarDiv .wrapper {
+  bottom: 0;
+  padding: 0;
+}
+#sidebarDiv .wrapper a img {
+  margin-left: auto;
+  margin-right: auto;
+}
+#sidebarDiv {
+     box-shadow: #8d8181 2px 0px 5px 2px;
+}
+#sidebarDiv .fa-company-name {
+  margin-left: 15px;
+  font-size: 20px;
+  padding-top: 15px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: lighter;
+  line-height: 0.8;
+}
+.off-screen-toggle-btn {
+  background-color: #4C4C4C;
+  padding: 5px;
+  padding-bottom: 3px;
+  padding-top: 4px;
+  position: absolute;
+  z-index: 1021;
+  display: none;
+}
+.off-screen-toggle-btn i {color: #ffffff;}
+  /*.slimScrollDiv{
+    overflow-y: initial !important;
+  }*/
+/* / Sidebar */
+
+/* Search Modal styles */
+
+.searchModal{
+  background-color: #4c4c4c;
+  border-top: none;
+  padding-bottom: 25px;
+}
+.searchModal .searchInput{
+    height: 36px;
+    border-radius: 5px;
+    background: -webkit-linear-gradient(#e8e7e7, white, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#e8e7e7, white, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#e8e7e7, white, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#e8e7e7, white, white); /* Standard syntax */
+}
+.searchModal .divSearchUsers{
+  margin-top: 20px;
+}
+.searchModal .divSearchUsers button{
+  background-color: #4c4c4c;
+  /*color: #d8d8d8;*/
+  border: 0;
+  color: #C9C9C9 !important;
+  font-size: 12px;
+}
+@media (min-width: 768px){
+    .modal-dialog {
+        width: 400px !important;
+        margin: 30px auto;
+    }
+}
+/* End search modal styles */
+
+
+
+/* Conversation */
+
+
+/* / Conversation */
+.chatWindow textarea{
+  width: 90%;
+  float: left;
+}
+.divFaLoading{
+  text-align: center;
+  font-size: 35px;
+}
+.divFaLoadingMain{
+  text-align: center;
+  position: relative;
+  font-size: 35px;
+  top: 50%;
+}
+.divFaLoadingNav {
+  margin-left: 10px;
+  font-size: 14px;
+}
+.divFaLoadingNav i {
+  font-size: 14px;
+}
+.fa-recent-conv-nav {
+  position: relative;
+  display: inline-block;
+  color: #C9C9C9;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+.dateDivider{
+    border-bottom: 1px solid #ababab;
+    text-align: center;
+}
+.dateDivider > div{
+    margin-top: -10px;
+    background-color: #fff;
+    margin-left: 43%;
+    clear: both;
+    font-size: 16px;
+    padding: 0px 16px 8px 16px;
+    float: left;
+    font-weight: bold;
+    color: #ababab;
+}
+#chatHistory-wrapper{
+  height: 100%;
+}
+#chatHistory-wrapper .highlight {
+  font-size: 12px;
+}
+#chatHistory{
+  background-color: #fff;
+  padding: 20px;
+  position: relative;
+  padding-bottom: 0px;
+  margin-left: 7px;
+  margin-bottom: 0px;
+  margin-bottom: 0;
+}
+#chatHistory .divFaLoading {
+  font-size: 16px !important;
+  padding: 0;
+}
+#chatHistory .divFaLoading i {
+  position: absolute;
+}
+.chatWindow{
+  height: 70px;
+}
+#chatHistory > a{
+  width: 100%;
+  clear: both;
+  float: left;
+  cursor: default;
+}
+#chatHistory > a.selfUser{
+  float: right;
+}
+.empty-conversation {
+  text-align: center;
+}
+.empty-conversation img {
+  margin-top: 10%;
+}
+.new-conversation-msg {
+  position: absolute;
+  bottom: 0;
+  text-align: left;
+  margin-bottom: 0px;
+}
+.new-conversation-string {
+  font-size: 13px;
+  /*font-style: italic;*/
+}
+.messageStatus{
+  float: right;
+  clear: both;
+}
+.messageStatus i.seen{
+  color: green;
+}
+.messageStatus i.error{
+  color: red;
+}
+.wdt-emoji-picker {
+  right: 44px !important;
+  z-index: 11;
+}
+.chatmessage a {
+  text-decoration: underline;
+}
+.send-msg-txt {
+  height: 40px !important;
+  background: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #F7F6F7), color-stop(100%, #fff));
+  background: -moz-linear-gradient(top, #F7F6F7, #fff);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  resize: none;
+}
+.send-msg-btn {
+  background: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #F7F6F7), color-stop(100%, #fff));
+  background: -moz-linear-gradient(top, #F7F6F7, #fff);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  left: -4px;
+  z-index: 5!important;
+  padding: 9px 12px;
+}
+.input-group-btn-empty {
+  border-top: 1px solid #cfdadd;
+  border-bottom: 1px solid #cfdadd;
+  padding-left: 20px;
+  background: -webkit-gradient(linear, center top, center bottom, color-stop(0%, #F7F6F7), color-stop(100%, #fff));
+  background: -moz-linear-gradient(top, #F7F6F7, #fff);
+}
+#emoji_input
+{
+    width: 36px;
+    background: -webkit-linear-gradient(#e8e7e7, white, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#e8e7e7, white, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#e8e7e7, white, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#e8e7e7, white, white); /* Standard syntax */
+    z-index: 2;
+}
+textarea.send-msg-txt {
+  padding: 9px 12px;
+  border-right: 0;
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#e8e7e7, white, white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#e8e7e7, white, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#e8e7e7, white, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#e8e7e7, white, white); /* Standard syntax */
+}
+textarea.send-msg-txt:focus {
+  padding: 9px 12px;
+  border-color: #cfdadd;
+  background: red; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#e8e7e7, white, white); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#e8e7e7, white, white); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#e8e7e7, white, white); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#e8e7e7, white, white); /* Standard syntax */
+}
+
+/* Audio Video Calls*/
+.avCallWrapper{
+  background: #076160;
+  background: -moz-linear-gradient(top,  #076160 0%, #4c8f8f 50%, #4c8f8f 51%, #021212 100%);
+  background: -webkit-linear-gradient(top,  #076160 0%,#4c8f8f 50%,#4c8f8f 51%,#021212 100%);
+  background: linear-gradient(to bottom,  #076160 0%,#4c8f8f 50%,#4c8f8f 51%,#021212 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#076160', endColorstr='#021212',GradientType=0 );
+
+}
+#audioVideoCall{
+  text-align: center;
+}
+  #userAvatar i{
+    font-size: 215px;
+    color: #fff;
+  }
+
+  #userAvatar{
+    display: inline-block;
+    margin-top: 161px;
+  }
+
+  .divLocalVideo .vidPlaceholder{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  .divLocalVideo video{
+    height: 67px;
+  }
+  #remoteVideo{
+    /* border: 2px solid #fff; */
+    /* border-radius: 5px; */
+  }
+  #userVideo #remoteVideo{
+    height: 100% !important;
+    width: auto !important;
+    max-width: 100% !important;
+    background-color: #000;
+
+  }
+  .callIcon{
+    padding: 14px;
+    border-radius: 30px;
+    margin-left: 7px;
+    border: 1px solid #bbb;
+    background-color: #fff;
+    display: inline-block;
+  }
+  .callIcon.muted{
+    background-color: #000;
+  }
+  .callIcon.off{
+    background-color: transparent;
+  }
+  .callIcon.on{
+    background-color: #FFFFFF;
+  }
+  .callIcon.phone{
+    background-color: #74BD38;
+  }
+  .callIcon.video{
+    background-color: #74BD38;
+  }
+  .callIcon.hangup{
+    background-color: #FF3624;
+  }
+
+.modal-content{
+        border-radius: 7px;
+        box-shadow: 3px 3px 15px 1px rgba(0, 0, 0, .5);
+}
+.modal-body{
+        border-radius: 4px;
+}
+
+  .callActions{
+    position: absolute;
+    right: 20px;
+    padding: 30px;
+    z-index: 1000;
+  }
+
+  .callAnimator{
+    border: 3px solid #dedede;
+    border-radius: 130px;
+    padding: 20px 22px;
+    margin-top:140px !important;
+  }
+  .callAnimator.r1{
+    border-radius: 165px;
+    padding: 32px 33px;
+    margin-top: 128px !important;
+  }
+
+  .callAnimator.r2{
+    border-radius: 165px;
+    padding: 46px 49px;
+    margin-top: 114px !important;
+  }
+  .callIntervalFont {
+    font-size: 12px;
+  }
+  .callInfoDiv{
+    position: absolute;
+    color: #fff;
+    padding: 30px;
+  }
+  .callInfoDiv .ciUser{
+    font-size: 28px;
+  }
+  .callInfoDiv .ciStatus{
+    text-align: left;
+  }
+  .audioVideoWindow{
+    position: absolute;
+    bottom: 10px;
+  }
+/* End Audio Video Calls*/
+
+/* Profile Page */
+.profilePage{
+
+}
+.profilePage h1, .profilePage h2, .profilePage h5{
+  padding: 0 5px;
+}
+.profilePage .form-group label.control-label{
+  padding-left: 20px;
+}
+.profileSpacer{
+  border-bottom: 3px solid #ababab;
+  margin-top: 4px;
+  margin-bottom: 7px;
+}
+.profileSpacerSmall{
+  border-bottom: 1px solid #ababab;
+  margin-top: 2px;
+  margin-bottom: 4px;
+}
+.version {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+}
+.offlineDiv {
+    font-size: 12px;
+    position: absolute;
+    z-index: 200;
+    top: 4px;
+    text-align: center;
+    padding: 3px 33px 5px 33px;
+    background-color: #f9edbe;
+    border: 1px solid #f0c36d;
+    border-radius: 3px;
+    color: #333;
+}
+.offlineDiv i {
+    font-size: 12px;
+}
+.missedCallIcon {
+    height: 38px;
+    width: 30px;
+    background: url(/css/icons/MissedCall.svg);
+    display: inline-block;
+    background-size: 38px 22px;
+    background-repeat: no-repeat;
+    background-position-x: -9px;
+    
+}
+.call_icon {
+    height: 38px;
+    width: 30px;
+    background: url(/css/icons/CallStatus.svg);
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position-y: 8px;
+}
+#callStatusContainer {
+    width:100%;
+    text-align: center;
+}
+#missCallDetails {
+    display:inline-block;
+    vertical-align:top;
+    margin-top:2px;
+}
+.callStatusSubcontainer {
+    width:20%;
+    display:inline-block
+}
+#callDetails {
+    display:inline-block;
+    vertical-align:top;
+    margin-top:2px;
+}
+/* End Profile Page */
+
+/**chat icon and font faces *
+.chat_icon
+{
+    height: 19px;
+    width: 20px;
+    background: url(/css/icons/ChatBubble.svg);
+    display: inline-block;
+    background-size: 38px 22px;
+    background-repeat: no-repeat;
+    background-position-x: -9px;
+}
+
+.call_icon {
+    height: 21px;
+    width: 22px;
+    background: url(/css/icons/call.svg);
+    display: inline-block;
+}*/

@@ -1,0 +1,44 @@
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url('../fonts/sourcesanspro/sourcesanspro-light.woff') format('woff');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url('../fonts/sourcesanspro/sourcesanspro.woff') format('woff');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url('../fonts/sourcesanspro/sourcesanspro-bold.woff') format('woff');
+}
+
+/*
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("fonts/helveticaneue/regular/helveticaneueltstd_bdcn_webfont.eot");
+    src: url("fonts/helveticaneue/regular/helveticaneueltstd_bdcn_webfont.eot?#iefix") format("embedded-opentype"),
+    url("fonts/helveticaneue/regular/helveticaneueltstd_bdcn_webfont.woff") format("woff"),
+    url("fonts/helveticaneue/regular/helveticaneueltstd_bdcn_webfont.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Helvetica Neue Light";
+    src: url("fonts/helveticaneue/light/06137036ee2d59941c9bda383866b943.eot");
+    src: url("fonts/helveticaneue/light/06137036ee2d59941c9bda383866b943.eot?#iefix") format("embedded-opentype"),
+    url("fonts/helveticaneue/light/06137036ee2d59941c9bda383866b943.woff2") format("woff2"),
+    url("fonts/helveticaneue/light/06137036ee2d59941c9bda383866b943.woff") format("woff"),
+    url("fonts/helveticaneue/light/06137036ee2d59941c9bda383866b943.ttf") format("truetype"),
+    url("fonts/helveticaneue/light/06137036ee2d59941c9bda383866b943.svg#Helvetica Neue LT Std") format("svg");
+}
+@font-face {font-family: "Helvetica Neue Medium";
+    src: url("fonts/helveticaneue/medium/f0d7d673ef06ec9cf090dc00572d63e4.eot");
+    src: url("css/fonts/helveticaneue/medium/f0d7d673ef06ec9cf090dc00572d63e4.eot?#iefix") format("embedded-opentype"),
+    url("fonts/helveticaneue/medium/f0d7d673ef06ec9cf090dc00572d63e4.woff2") format("woff2"),
+    url("fonts/helveticaneue/medium/f0d7d673ef06ec9cf090dc00572d63e4.woff") format("woff"),
+    url("fonts/helveticaneue/medium/f0d7d673ef06ec9cf090dc00572d63e4.ttf") format("truetype"),
+    url("fonts/helveticaneue/medium/f0d7d673ef06ec9cf090dc00572d63e4.svg#Helvetica Neue LT Std") format("svg");
+}*/

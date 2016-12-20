@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>React.Web.Mvc4</id>
+    <version>3.0.0</version>
+    <title>ReactJS.NET (MVC 4 and 5)</title>
+    <authors>Daniel Lo Nigro</authors>
+    <owners>Daniel Lo Nigro</owners>
+    <licenseUrl>https://github.com/reactjs/React.NET#licence</licenseUrl>
+    <projectUrl>http://reactjs.net/</projectUrl>
+    <iconUrl>http://reactjs.net/img/logo_64.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>ReactJS tools for ASP.NET MVC 4 and 5. For ASP.NET Core, install React.AspNet instead! Please refer to project site (http://reactjs.net/) for more details, usage examples and sample code.</description>
+    <summary>ReactJS and Babel tools for ASP.NET MVC 4 and 5</summary>
+    <copyright>Copyright 2014-Present Facebook, Inc</copyright>
+    <tags>asp.net mvc asp jquery javascript js react facebook reactjs babel</tags>
+    <dependencies>
+      <group targetFramework=".NETFramework4.0">
+        <dependency id="Microsoft.AspNet.Mvc" version="4.0.20710" />
+        <dependency id="React.Core" version="3.0.0" />
+        <dependency id="React.Web" version="3.0.0" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Web" targetFramework=".NETFramework4.0" />
+    </frameworkAssemblies>
+  </metadata>
+</package>
