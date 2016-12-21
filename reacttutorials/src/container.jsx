@@ -6,8 +6,7 @@ var Route = ReactRouter.Route;
 var RouteHandler = ReactRouter.RouteHandler;
 class Container extends React.Component {
     constructor() {
-        super()
-        console.log(this);
+        super();
     }
     render() {
         console.log(this, 'mantu');
@@ -18,7 +17,7 @@ class Container extends React.Component {
                 </a>
                 <Link to="/contact/custom" >forums</Link>
                 <div className="app-content-body fade-in-up" >
-                    <div>{this.props.children}</div>
+                    <div>{this.props.children||this.props.main}</div>
                 </div>
             </div>
         );

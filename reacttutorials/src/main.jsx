@@ -33,7 +33,7 @@ ReactDOM.render(
       <IndexRoute component={Login} />
       <Route path="contact" component={Container}>
         <IndexRoute component={Contact} />
-        <Route path=":custom" component={Custom} />
+        <Route path=":custom" components={{sidebar:Contact,main:Custom}} />
       </Route>
       <Route path="stuff" component={Stuff} />
     </Route>

@@ -107,7 +107,7 @@
 	      Route,
 	      { path: 'contact', component: Container },
 	      React.createElement(IndexRoute, { component: Contact }),
-	      React.createElement(Route, { path: ':custom', component: Custom })
+	      React.createElement(Route, { path: ':custom', components: { sidebar: Contact, main: Custom } })
 	    ),
 	    React.createElement(Route, { path: 'stuff', component: Stuff })
 	  )
@@ -6525,12 +6525,18 @@
 	 * will remain to ensure logic does not differ in production.
 	 */
 	
-	function invariant(condition, format, a, b, c, d, e, f) {
-	  if (process.env.NODE_ENV !== 'production') {
+	var validateFormat = function validateFormat(format) {};
+	
+	if (process.env.NODE_ENV !== 'production') {
+	  validateFormat = function validateFormat(format) {
 	    if (format === undefined) {
 	      throw new Error('invariant requires an error message argument');
 	    }
-	  }
+	  };
+	}
+	
+	function invariant(condition, format, a, b, c, d, e, f) {
+	  validateFormat(format);
 	
 	  if (!condition) {
 	    var error;
@@ -27264,7 +27270,7 @@
 	               null,
 	               'STUFF'
 	            ),
-	            'The temp stuff'
+	            'The temp stuff is'
 	         );
 	      }
 	   }]);
@@ -27353,7 +27359,7 @@
 	         return React.createElement(
 	            'div',
 	            null,
-	            'Custom loaded now :)'
+	            'Custom loaded now :) ;'
 	         );
 	      }
 	   }]);
@@ -27391,7 +27397,6 @@
 	        _classCallCheck(this, Container);
 	
 	        _get(Object.getPrototypeOf(Container.prototype), 'constructor', this).call(this);
-	        console.log(this);
 	    }
 	
 	    _createClass(Container, [{
