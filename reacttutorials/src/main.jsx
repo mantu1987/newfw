@@ -6,6 +6,7 @@ var Stuff = require('./stuff');
 var Contact = require('./contact');
 var Container = require("./container");
 var Custom = require('./custom');
+var Details = require('./details');
 var browserHistory = ReactRouter.browserHistory;
 var DefaultRoute = ReactRouter.DefaultRoute;
 var Link = ReactRouter.Link;
@@ -32,8 +33,8 @@ ReactDOM.render(
     <Route path="/" component={App}>
       <IndexRoute component={Login} />
       <Route path="contact" component={Container}>
-        <IndexRoute component={Contact} />
-        <Route path=":custom" components={{sidebar:Contact,main:Custom}} />
+        <IndexRoute components={{sidebar:Contact,main:Custom}} />
+        <Route path=":custom" components={{sidebar:Contact,main:Details}} />
       </Route>
       <Route path="stuff" component={Stuff} />
     </Route>

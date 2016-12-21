@@ -1,13 +1,13 @@
 var React = require('react');
 
-class Stuff extends React.Component {
+class Details extends React.Component {
    render() {
          return (
            <div>
-            I am detail Custom Component
+            I am detail Component
           </div>
       );
    }
 }
 
-module.exports = Stuff;
+module.exports = Details;
