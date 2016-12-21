@@ -4,7 +4,7 @@ class Stuff extends React.Component {
    render() {
          return (
            <div>
-            Custom loaded now :)
+            Custom loaded now :) ;
           </div>
       );
    }
