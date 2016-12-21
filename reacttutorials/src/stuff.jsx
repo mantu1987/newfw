@@ -5,7 +5,7 @@ class Stuff extends React.Component {
          return (
            <div>
               <h2>STUFF</h2>
-              The temp stuff
+              The temp stuff is dere
           </div>
       );
    }
