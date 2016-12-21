@@ -27,7 +27,7 @@ class Login extends React.Component {
                   this.setState({
                         isValidLogin: true
                   });
-                  this.props.history.push('/contact');
+                  this.props.history.push('/main');
             }
             else {
                   this.setState({

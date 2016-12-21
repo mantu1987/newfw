@@ -3,7 +3,7 @@ var ReactRouter = require('react-router');
 var ReactDOM = require('react-dom');
 var Login = require('./login');
 var Stuff = require('./stuff');
-var Contact = require('./contact');
+var Sidebar = require('./sidebar');
 var Container = require("./container");
 var Custom = require('./custom');
 var Details = require('./details');
@@ -32,9 +32,9 @@ ReactDOM.render(
   <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={Login} />
-      <Route path="contact" component={Container}>
-        <IndexRoute components={{sidebar:Contact,main:Custom}} />
-        <Route path=":custom" components={{sidebar:Contact,main:Details}} />
+      <Route path="main" component={Container}>
+        <IndexRoute components={{sidebar:Sidebar,main:Details}} />
+        <Route path=":custom" components={{sidebar:Sidebar,main:Custom}} />
       </Route>
       <Route path="stuff" component={Stuff} />
     </Route>

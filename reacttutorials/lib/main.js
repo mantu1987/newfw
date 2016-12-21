@@ -59,10 +59,10 @@
 	var ReactDOM = __webpack_require__(66);
 	var Login = __webpack_require__(241);
 	var Stuff = __webpack_require__(242);
-	var Contact = __webpack_require__(243);
-	var Container = __webpack_require__(245);
+	var Sidebar = __webpack_require__(243);
+	var Container = __webpack_require__(246);
 	var Custom = __webpack_require__(244);
-	var Details = __webpack_require__(246);
+	var Details = __webpack_require__(247);
 	var browserHistory = ReactRouter.browserHistory;
 	var DefaultRoute = ReactRouter.DefaultRoute;
 	var Link = ReactRouter.Link;
@@ -106,9 +106,9 @@
 	    React.createElement(IndexRoute, { component: Login }),
 	    React.createElement(
 	      Route,
-	      { path: 'contact', component: Container },
-	      React.createElement(IndexRoute, { components: { sidebar: Contact, main: Custom } }),
-	      React.createElement(Route, { path: ':custom', components: { sidebar: Contact, main: Details } })
+	      { path: 'main', component: Container },
+	      React.createElement(IndexRoute, { components: { sidebar: Sidebar, main: Details } }),
+	      React.createElement(Route, { path: ':custom', components: { sidebar: Sidebar, main: Custom } })
 	    ),
 	    React.createElement(Route, { path: 'stuff', component: Stuff })
 	  )
@@ -27206,7 +27206,7 @@
 	                        this.setState({
 	                              isValidLogin: true
 	                        });
-	                        this.props.history.push('/contact');
+	                        this.props.history.push('/main');
 	                  } else {
 	                        this.setState({
 	                              isValidLogin: false
@@ -27302,32 +27302,41 @@
 	var Route = ReactRouter.Route;
 	var RouteHandler = ReactRouter.RouteHandler;
 	var Custom = __webpack_require__(244);
+	var SidebarList = __webpack_require__(245);
 	
-	var Contact = (function (_React$Component) {
-	  _inherits(Contact, _React$Component);
+	var Sidebar = (function (_React$Component) {
+	  _inherits(Sidebar, _React$Component);
 	
-	  function Contact() {
-	    _classCallCheck(this, Contact);
+	  function Sidebar() {
+	    _classCallCheck(this, Sidebar);
 	
-	    _get(Object.getPrototypeOf(Contact.prototype), 'constructor', this).apply(this, arguments);
+	    _get(Object.getPrototypeOf(Sidebar.prototype), 'constructor', this).apply(this, arguments);
 	  }
 	
-	  _createClass(Contact, [{
+	  _createClass(Sidebar, [{
 	    key: 'render',
 	    value: function render() {
 	      console.log(this, 'mantu');
 	      return React.createElement(
 	        'div',
-	        { className: 'app-content' },
-	        'temp'
+	        { id: 'sidebarDiv', style: { marginTop: '-6px', top: 0, height: 668 } },
+	        React.createElement(
+	          'div',
+	          { className: 'aside-wrap' },
+	          React.createElement(
+	            'div',
+	            { className: 'navi-wrap', id: 'navbarcontainer' },
+	            React.createElement(SidebarList, null)
+	          )
+	        )
 	      );
 	    }
 	  }]);
 	
-	  return Contact;
+	  return Sidebar;
 	})(React.Component);
 	
-	module.exports = Contact;
+	module.exports = Sidebar;
 
 /***/ },
 /* 244 */
@@ -27390,6 +27399,104 @@
 	var Router = ReactRouter.Router;
 	var Route = ReactRouter.Route;
 	var RouteHandler = ReactRouter.RouteHandler;
+	var Custom = __webpack_require__(244);
+	
+	var SidebarList = (function (_React$Component) {
+	    _inherits(SidebarList, _React$Component);
+	
+	    function SidebarList() {
+	        _classCallCheck(this, SidebarList);
+	
+	        _get(Object.getPrototypeOf(SidebarList.prototype), 'constructor', this).apply(this, arguments);
+	    }
+	
+	    _createClass(SidebarList, [{
+	        key: 'render',
+	        value: function render() {
+	            console.log(this, 'mantu');
+	            return React.createElement(
+	                'div',
+	                null,
+	                React.createElement(
+	                    'div',
+	                    { className: 'fa-company-name' },
+	                    'FieldAware'
+	                ),
+	                React.createElement(
+	                    'ul',
+	                    { className: 'list-group no-bg no-borders pull-in m-b-sm m-t-8 userStatus' },
+	                    React.createElement(
+	                        'li',
+	                        { className: 'list-group-item' },
+	                        React.createElement(
+	                            'a',
+	                            { herf: true, className: 'pull-left thumb-sm avatar m-r hide' },
+	                            React.createElement('img', { src: 'img/user.png', alt: '...', className: 'img-circle' }),
+	                            React.createElement('i', { className: 'on b-white bottom' })
+	                        ),
+	                        React.createElement(
+	                            'div',
+	                            { className: 'clear userProfileSection' },
+	                            React.createElement(
+	                                'div',
+	                                { className: 'truncated-username' },
+	                                React.createElement(
+	                                    'a',
+	                                    null,
+	                                    'Mantu Nigam'
+	                                )
+	                            ),
+	                            React.createElement(
+	                                'small',
+	                                { className: 'text-muted m-l-15' },
+	                                React.createElement(
+	                                    'i',
+	                                    null,
+	                                    'Online'
+	                                )
+	                            ),
+	                            React.createElement('div', { className: 'badge presenceIcon bg-online pull-right m-r-12' })
+	                        )
+	                    )
+	                ),
+	                React.createElement(
+	                    'div',
+	                    { style: { width: 240 } },
+	                    React.createElement(
+	                        'ul',
+	                        { className: 'list-group no-bg no-borders pull-in conversationList' },
+	                        React.createElement('li', { className: 'list-group-item clear' })
+	                    )
+	                )
+	            );
+	        }
+	    }]);
+	
+	    return SidebarList;
+	})(React.Component);
+	
+	module.exports = SidebarList;
+
+/***/ },
+/* 246 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+	
+	var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var React = __webpack_require__(1);
+	var ReactRouter = __webpack_require__(2);
+	var Link = ReactRouter.Link;
+	var Router = ReactRouter.Router;
+	var Route = ReactRouter.Route;
+	var RouteHandler = ReactRouter.RouteHandler;
 	
 	var Container = (function (_React$Component) {
 	    _inherits(Container, _React$Component);
@@ -27406,24 +27513,33 @@
 	            console.log(this, 'mantu');
 	            return React.createElement(
 	                'div',
-	                { className: 'app-content' },
+	                null,
 	                React.createElement(
-	                    'a',
-	                    { href: '#', className: 'off-screen-toggle-btn', 'data-target': '.app-content' },
-	                    React.createElement('i', { className: 'glyphicon glyphicon-align-justify' })
-	                ),
-	                React.createElement(
-	                    Link,
-	                    { to: '/contact/custom' },
-	                    'forums'
+	                    'div',
+	                    { className: 'app-aside off-screen bg-black' },
+	                    this.props.sidebar
 	                ),
 	                React.createElement(
 	                    'div',
-	                    { className: 'app-content-body fade-in-up' },
+	                    { className: 'app-content' },
+	                    React.createElement(
+	                        'a',
+	                        { href: '#', className: 'off-screen-toggle-btn', 'data-target': '.app-content' },
+	                        React.createElement('i', { className: 'glyphicon glyphicon-align-justify' })
+	                    ),
+	                    React.createElement(
+	                        Link,
+	                        { to: '/main/custom' },
+	                        'forums'
+	                    ),
 	                    React.createElement(
 	                        'div',
-	                        null,
-	                        this.props.children || this.props.main
+	                        { className: 'app-content-body fade-in-up' },
+	                        React.createElement(
+	                            'div',
+	                            null,
+	                            this.props.children || this.props.main
+	                        )
 	                    )
 	                )
 	            );
@@ -27436,7 +27552,7 @@
 	module.exports = Container;
 
 /***/ },
-/* 246 */
+/* 247 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
