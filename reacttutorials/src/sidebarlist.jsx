@@ -4,10 +4,14 @@ var Link = ReactRouter.Link;
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 var RouteHandler = ReactRouter.RouteHandler;
-var Custom = require('./custom');
+var SidebarItem = require('./sidebaritem');
 class SidebarList extends React.Component {
+    constructor() {
+        super();
+        this.numbers = [1, 2, 3, 4, 5];
+    }
     render() {
-        console.log(this, 'mantu');
+        var NumberList=this.NumberList.bind(this);
         return (
             <div>
                 <div className="fa-company-name">
@@ -15,7 +19,7 @@ class SidebarList extends React.Component {
                 </div>
                 <ul className="list-group no-bg no-borders pull-in m-b-sm m-t-8 userStatus">
                     <li className="list-group-item">
-                        <a herf className="pull-left thumb-sm avatar m-r hide">
+                        <a className="pull-left thumb-sm avatar m-r hide">
                             <img src="img/user.png" alt="..." className="img-circle" />
                             <i className="on b-white bottom" />
                         </a>
@@ -29,14 +33,51 @@ class SidebarList extends React.Component {
                     </li>
                 </ul>
                 <div style={{ width: 240 }}>
-                    <ul className="list-group no-bg no-borders pull-in conversationList">
-                        <li className="list-group-item clear">
-                        </li>
-                    </ul>
+                    <NumberList></NumberList>
                 </div>
             </div>
         );
     }
+    NumberList() {
+        const numbers = this.numbers;
+        console.log("test",0);
+        const listItems = numbers.map((number) => {
+            return <li className="list-group-item clear"  key={number.toString()} value={number}>
+                        <SidebarItem  ></SidebarItem>
+                   </li>
+        });
+        return (
+            <ul className="list-group no-bg no-borders pull-in conversationList">
+                {listItems}
+            </ul>
+        );
+    }
+    listItem(props) {
+        return <li>{props.value}</li>;
+    }
 }
 
 module.exports = SidebarList;
+
+/*
+function ListItem(props) {
+  // Correct! There is no need to specify the key here:
+  return <li>{props.value}</li>;
+}
+
+function NumberList(props) {
+  const numbers = props.numbers;
+  const listItems = numbers.map((number) =>
+    // Correct! Key should be specified inside the array.
+    <ListItem key={number.toString()}
+              value={number} />
+  );
+  return (
+    <ul>
+      {listItems}
+    </ul>
+  );
+}
+
+const numbers = [1, 2, 3, 4, 5];
+ */
