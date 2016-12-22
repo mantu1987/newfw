@@ -27361,7 +27361,9 @@
 	    _classCallCheck(this, Stuff);
 	
 	    _get(Object.getPrototypeOf(Stuff.prototype), 'constructor', this).call(this, props);
-	    console.log(props);
+	    this.state = {
+	      mode: props.location.state
+	    };
 	  }
 	
 	  _createClass(Stuff, [{
