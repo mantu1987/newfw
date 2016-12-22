@@ -4,10 +4,12 @@ var Link = ReactRouter.Link;
 var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 var RouteHandler = ReactRouter.RouteHandler;
+var history = ReactRouter.browserHistory;
 class SidebarItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = { presence: props.value };
+        this.onChangeConversation = this.onChangeConversation.bind(this);
     }
     render() {
         let presenceStatus = null;
@@ -27,7 +29,7 @@ class SidebarItem extends React.Component {
             <div>
                 {presenceStatus}
                 <div className="clear">
-                    <div>
+                    <div onClick={this.onChangeConversation}>
                         <a title="name" className="conversationDisplayName">{this.state.presence.userName}</a>
                         <div className="userActions">
                             <i className="fa fa-comment" title="title}" />
@@ -44,6 +46,15 @@ class SidebarItem extends React.Component {
                 </div>
             </div>
         );
+    }
+    onChangeConversation() {
+        console.log(ReactRouter);
+        // history.push('/main/' + this.state.presence.id);
+        var item = {
+            pathname: '/main/conversation',
+            state: { mode: 'chat', presenceId: this.state.presence.id }
+        };
+        history.push(item);
     }
 }
 

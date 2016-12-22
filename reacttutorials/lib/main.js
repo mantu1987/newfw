@@ -27355,26 +27355,34 @@
 	var React = __webpack_require__(1);
 	
 	var Stuff = (function (_React$Component) {
-	   _inherits(Stuff, _React$Component);
+	  _inherits(Stuff, _React$Component);
 	
-	   function Stuff() {
-	      _classCallCheck(this, Stuff);
+	  function Stuff(props) {
+	    _classCallCheck(this, Stuff);
 	
-	      _get(Object.getPrototypeOf(Stuff.prototype), 'constructor', this).apply(this, arguments);
-	   }
+	    _get(Object.getPrototypeOf(Stuff.prototype), 'constructor', this).call(this, props);
+	    console.log(props);
+	  }
 	
-	   _createClass(Stuff, [{
-	      key: 'render',
-	      value: function render() {
-	         return React.createElement(
-	            'div',
-	            null,
-	            'I am detail Custom Component'
-	         );
-	      }
-	   }]);
+	  _createClass(Stuff, [{
+	    key: 'componentWillReceiveProps',
+	    value: function componentWillReceiveProps(newprops) {
+	      this.setState({
+	        mode: newprops.location.state
+	      });
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      return React.createElement(
+	        'div',
+	        null,
+	        'I am detail Custom Component'
+	      );
+	    }
+	  }]);
 	
-	   return Stuff;
+	  return Stuff;
 	})(React.Component);
 	
 	module.exports = Stuff;
@@ -27526,6 +27534,7 @@
 	var Router = ReactRouter.Router;
 	var Route = ReactRouter.Route;
 	var RouteHandler = ReactRouter.RouteHandler;
+	var history = ReactRouter.browserHistory;
 	
 	var SidebarItem = (function (_React$Component) {
 	    _inherits(SidebarItem, _React$Component);
@@ -27535,6 +27544,7 @@
 	
 	        _get(Object.getPrototypeOf(SidebarItem.prototype), 'constructor', this).call(this, props);
 	        this.state = { presence: props.value };
+	        this.onChangeConversation = this.onChangeConversation.bind(this);
 	    }
 	
 	    _createClass(SidebarItem, [{
@@ -27559,7 +27569,7 @@
 	                    { className: 'clear' },
 	                    React.createElement(
 	                        'div',
-	                        null,
+	                        { onClick: this.onChangeConversation },
 	                        React.createElement(
 	                            'a',
 	                            { title: 'name', className: 'conversationDisplayName' },
@@ -27584,6 +27594,17 @@
 	                    )
 	                )
 	            );
+	        }
+	    }, {
+	        key: 'onChangeConversation',
+	        value: function onChangeConversation() {
+	            console.log(ReactRouter);
+	            // history.push('/main/' + this.state.presence.id);
+	            var item = {
+	                pathname: '/main/conversation',
+	                state: { mode: 'chat', presenceId: this.state.presence.id }
+	            };
+	            history.push(item);
 	        }
 	    }]);
 	
@@ -27616,16 +27637,22 @@
 	var Container = (function (_React$Component) {
 	    _inherits(Container, _React$Component);
 	
-	    function Container() {
+	    function Container(props) {
 	        _classCallCheck(this, Container);
 	
-	        _get(Object.getPrototypeOf(Container.prototype), 'constructor', this).call(this);
+	        _get(Object.getPrototypeOf(Container.prototype), 'constructor', this).call(this, props);
+	        this.state = { mode: props.location.state };
 	    }
 	
 	    _createClass(Container, [{
+	        key: 'componentWillReceiveProps',
+	        value: function componentWillReceiveProps(newprops) {
+	            console.log(newprops);
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
-	            console.log(this, 'mantu');
+	            console.log(this, 'mantu', this.props.location.state);
 	            return React.createElement(
 	                'div',
 	                null,

@@ -5,11 +5,15 @@ var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 var RouteHandler = ReactRouter.RouteHandler;
 class Container extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        this.state = { mode: props.location.state };
+    }
+    componentWillReceiveProps(newprops){
+        console.log(newprops)
     }
     render() {
-        console.log(this, 'mantu');
+        console.log(this, 'mantu',this.props.location.state);
         return (
             <div>
                 <div className="app-aside off-screen bg-black" >
