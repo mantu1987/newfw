@@ -5,13 +5,30 @@ var Router = ReactRouter.Router;
 var Route = ReactRouter.Route;
 var RouteHandler = ReactRouter.RouteHandler;
 class SidebarItem extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { presence: props.value };
+    }
     render() {
+        let presenceStatus = null;
+        if (this.state.presence.availability == "online") {
+            presenceStatus = <div className="badge presenceIcon bg-online pull-right m-r-12 online" />
+        }
+        else if (this.state.presence.availability == "incall") {
+            presenceStatus = <div className="badge presenceIcon bg-incall pull-right m-r-12 incall" />
+        }
+        else if (this.state.presence.availability == "offline") {
+            presenceStatus = <div className="badge presenceIcon bg-offline pull-right m-r-12 offline" />
+        }
+        else if (this.state.presence.availability == "away") {
+            presenceStatus = <div className="badge presenceIcon bg-away pull-right m-r-12 away" />
+        }
         return (
             <div>
-                <div className="badge presenceIcon bg-online pull-right m-r-12 online" />
+                {presenceStatus}
                 <div className="clear">
                     <div>
-                        <a title="name" className="conversationDisplayName">User</a>
+                        <a title="name" className="conversationDisplayName">{this.state.presence.userName}</a>
                         <div className="userActions">
                             <i className="fa fa-comment" title="title}" />
                             <i className="fa fa-phone icoCall" title="Audio Call name" />
