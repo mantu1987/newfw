@@ -1,0 +1,29 @@
+<template>
+    <require from="./item/item"></require>
+    <div class="fa-company-name">
+        FieldAware
+    </div>
+    <ul class="list-group no-bg no-borders pull-in m-b-sm m-t-8 userStatus">
+        <li class="list-group-item">
+            <a herf class="pull-left thumb-sm avatar m-r hide">
+                <img src="img/user.png" alt="..." class="img-circle">
+                <i class="on b-white bottom"></i>
+            </a>
+            <div class="clear userProfileSection">
+                <div class="truncated-username">
+                    <a>Mantu Nigam</a>
+                </div>
+                <small class="text-muted m-l-15"><i>Online</i></small>
+                <div class="badge presenceIcon bg-online pull-right m-r-12"></div>
+            </div>
+        </li>
+    </ul>
+    <div style="width:240px">
+<ul class="list-group no-bg no-borders pull-in conversationList">
+    <li class="list-group-item clear" repeat.for="presence of presencelist" [ngClass]="{'active':presence.isActive,'inactive':!presence.isActive,'hasUnreadMessage':false}">
+        <!--<mbs-conversation [presence]="presence" (onConversationSelected)="createChat(presence.id)"></mbs-conversation>-->
+        <item presence.bind="presence"></item>
+    </li>
+</ul>
+</div>
+</template>

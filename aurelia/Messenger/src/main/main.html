@@ -1,11 +1,11 @@
 <template>
   <require from="./main.css"></require>
+  <require from="./sidebar/sidebar"></require>
   <div class="app-aside off-screen bg-black">
     <div id="sidebarDiv" style="margin-top:-6px;top:0px;height:668px;">
     <div class="aside-wrap">
       <div class="navi-wrap" id="navbarcontainer">
-        <!--<mbs-sidebar (onComposing)="onComposingChange($event);">
-        </mbs-sidebar>-->
+        <sidebar></sidebar>
       </div>
     </div>
 </div>
@@ -13,9 +13,11 @@
 <div class="app-content">
   <a href class="off-screen-toggle-btn" ui-toggle-class="app-aside-toggled" data-target=".app-content">
     <i class="glyphicon glyphicon-align-justify"></i>
+
   </a>
   <div class="app-content-body fade-in-up">
-    <!--<router-outlet></router-outlet>-->
+    <router-view></router-view>
   </div>
 </div>
+
 </template>

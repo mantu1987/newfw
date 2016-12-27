@@ -1,0 +1,13 @@
+<template>
+    <div class="badge presenceIcon bg-online pull-right m-r-12" [ngClass]="{'bg-online':presence.availability==='online','bg-offline':presence.availability==='offline','bg-incall':presence.availability==='incall','bg-away':presence.availability==='away'}"></div>
+    <div class="clear" click.delegate="onConversationChange()">
+        <div>
+            <a title="${presence.name}" class="conversationDisplayName">${presence.name}</a>
+            <div class="userActions">
+                <i class="fa fa-comment" title="${presence.name}"></i>
+                <i class="fa fa-phone icoCall" title="Audio Call ${presence.name}"></i>
+                <i class="fa fa-desktop" title="Video Call ${presence.name}"></i>
+            </div>
+        </div>
+    </div>
+</template>
