@@ -12,8 +12,7 @@ export class App {
 
     config.map([
       { route: '', moduleId: 'login/login' },
-      { route: 'main', moduleId: 'main/main' },
-      { route: 'contacts/:id', moduleId: 'contact-detail', name: 'contacts' }
+      { route: 'main', moduleId: 'main/main' }
     ]);
 
     this.router = router;
