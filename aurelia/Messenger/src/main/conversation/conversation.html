@@ -1,3 +1,45 @@
 <template>
-  <div>welcome to the new home ${mode.presence.userName}</div>
+ <div class="hbox hbox-auto-xs hbox-auto-sm">
+    <div class="col" if.bind="mode.mode == 'chat'">
+        <div class="" resize-height="-85" style="padding-top:15px;">
+            <div id="chatHistory-wrapper" if.bind="mode.mode == 'chat'">
+                <div id="chatHistory" style="height:540px;overflow-y: scroll;overflow-x: hidden;" fa-chat-select  resize-height="-100" class="list-group list-group-lg list-group-sp" >
+                    <div class="ch-user">${mode.presence.userName}</div><br/>
+                   <!-- <div *ngIf="loadingMore" class="divFaLoading wrapper">
+                        <i class="fa fa-refresh fa-spin" aria-hidden="true"></i>
+                    </div>-->
+                    <!--<a href ng-class="{selfUser : message.isIamSender} clearfix" ng-if="message.text" *ngFor="let message of (messageList | groupFormat:15);let i=index;">
+                        <div >
+                            <div *ngIf="(i==0)||((i) && (((message.receivedTime|dateFormat:'Do MMMM YYYY') != (messageList[i - 1].receivedTime|dateFormat:'Do MMMM YYYY'))))">
+                                <div class="strike">
+                                    <span>{{message.receivedTime|dateFormat:'Do MMMM YYYY'}}</span>
+                                </div>
+                            </div>
+                            <span class="clear" style="padding-bottom:5px; clear:both;">
+                                <span class="conversations-user-details" *ngIf="i==0||(i && (((messageList[i].groupTime) != (messageList[i-1].groupTime)) || message.chatUserName != messageList[i-1].chatUserName)||message.newMessageHeader)">
+                                    <span class="highlight strong" >{{message.chatUserName|userName}} &nbsp; &nbsp;</span>
+                                    <span class="highlight" >{{message.receivedTime|timeFormat}}</span>
+                                </span>
+                                <small class="clear message-text">{{message.text}}</small>
+                            </span>
+                        </div>
+                    </a>-->
+                    <div class="empty-conversation" if.bind="!messageList.length">
+                        <img src="img/default-screen-logo.png" alt="USERNAME" />
+                        <p class="new-conversation-msg">
+                            <span>
+                                <span class="highlight strong">${mode.presence.userName}</span>
+                                <span class="highlight italic">${"online"}</span>
+                            </span><br/>
+                            <i class="new-conversation-string">This is the start of your conversation with</i> <span class="highlight strong">${mode.presence.userName}</span>.<i class="new-conversation-string">To start the conversation type a message below</i> <span ng-if="false">,send a file privately</span> or speak to <span class="highlight strong">${mode.presence.userName}</span> <i class="new-conversation-string">in call.</i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chatWindow" if.bind="mode.mode == 'chat'">
+          <!-- <mbs-chatwindow [userid]="userid" (onMessageSend)="sendMessage($event)"></mbs-chatwindow>-->
+        </div>
+    </div>
+</div>
 </template>
