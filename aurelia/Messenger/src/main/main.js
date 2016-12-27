@@ -8,14 +8,12 @@ export class Main {
   attached(){
 
   }
-/*console.log('clicked', this.presence, this.router);
-        let conversationRoute = this.router.routes.find(x => x.route === 'conversation');*/
   configureRouter(config, router) {
     config.title = 'Contacts';
 
     config.map([
       { route: '', moduleId: './home/home' },
-      { route: ':presenceid', moduleId: './conversation/conversation', mode: {} }
+      { route: 'chat/:presenceid', moduleId: './conversation/conversation', mode: {} }
     ]);
 
     this.router = router;

@@ -13,11 +13,11 @@ export class Item {
          updateProperties kinda method
      }*/
     onConversationChange() {
-        let conversationRoute = this.router.routes.find(x => x.route === ':presenceid');
+        let conversationRoute = this.router.routes.find(x => x.route === 'chat/:presenceid');
         conversationRoute.mode = {
             mode:'chat',
             presence:this.presence
         };
-        this.router.navigate("/main/"+this.presence.id);
+        this.router.navigate("/main/chat/"+this.presence.id);
     }
 }
