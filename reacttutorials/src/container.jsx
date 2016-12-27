@@ -23,8 +23,6 @@ class Container extends React.Component {
                     <a href="#" className="off-screen-toggle-btn" data-target=".app-content" >
                         <i className="glyphicon glyphicon-align-justify"></i>
                     </a>
-                    <Link to="/main/custom" >forums</Link>
-
                     <div className="app-content-body fade-in-up" >
                         <div>{this.props.children || this.props.main}</div>
                     </div>

@@ -27379,7 +27379,8 @@
 	      return React.createElement(
 	        'div',
 	        null,
-	        'I am detail Custom Component'
+	        'I am detail Custom Component ',
+	        this.state.mode.presenceId
 	      );
 	    }
 	  }]);
@@ -27670,11 +27671,6 @@
 	                        'a',
 	                        { href: '#', className: 'off-screen-toggle-btn', 'data-target': '.app-content' },
 	                        React.createElement('i', { className: 'glyphicon glyphicon-align-justify' })
-	                    ),
-	                    React.createElement(
-	                        Link,
-	                        { to: '/main/custom' },
-	                        'forums'
 	                    ),
 	                    React.createElement(
 	                        'div',

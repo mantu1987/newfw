@@ -1,0 +1,167 @@
+.bubble{
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid #01B3AF;
+    box-shadow: 0 0 1px #01B3AF;
+    display: inline-block;
+    padding: 8px 18px;
+    position: relative;
+    vertical-align: top;
+}
+
+.bubble::before {
+
+    background-color: white;
+    content: "\00a0";
+    display: block;
+    height: 16px;
+    position: absolute;
+    top: 11px;
+    transform:             rotate( 29deg ) skew( -35deg );
+        -moz-transform:    rotate( 29deg ) skew( -35deg );
+        -ms-transform:     rotate( 29deg ) skew( -35deg );
+        -o-transform:      rotate( 29deg ) skew( -35deg );
+        -webkit-transform: rotate( 29deg ) skew( -35deg );
+    width:  20px;
+}
+
+.bubble.me::before{
+    border-left: 1px solid #01B3AF;
+    border-bottom: 1px solid #01B3AF;
+}
+.bubble.you::before{
+    border-right: 1px solid #ababab;
+    border-top: 1px solid #ababab;
+}
+
+.me {
+    width: 70%;
+    float: left;
+    margin: 5px 45px 5px 20px;
+}
+.timestamp
+{
+    width: 70%;
+}
+.timestamp .me
+{
+    float: left;
+}
+.timestamp .you
+{
+    float: right;
+}
+.me::before {
+    /*box-shadow: -1px 1px 1px 0 rgba( 178, 178, 178, .4 );*/
+    left: -11px;
+}
+
+.you {
+    width:70%;
+    float: right;
+    margin: 5px 20px 5px 45px;
+}
+
+.you::before {
+    /*box-shadow: 1px -1px 1px 0 rgba( 178, 178, 178, .4 );*/
+    right: -11px;
+}
+.bubble.you {
+    border: 1px solid #ababab!important;
+    box-shadow: 0 0 1px #ababab!important;
+}
+.timestamp.you {
+    color: #ababab;
+}
+.timestamp.me {
+    color: #01B3AF;
+}
+
+.strikeleft {
+    display: block;
+    text-align: right !important;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 15px 0px 15px 0px;
+    /*margin: 10px 0px 10px 0px;*/
+}
+.strike {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 15px 0px 15px 0px;
+    /*margin: 10px 0px 10px 0px;*/
+}
+
+.strike > span {
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 0px;
+    color: #bebebe;
+}
+.strikeleft> span {
+    margin-right: 0%;
+    /*color: #01B3AF !important;*/
+}
+.strike > span:before,
+.strike > span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    height: 1px;
+    background: #d8d8d8;
+}
+
+.strikeleft > span:before,
+.strikeleft > span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    height: 1px;
+    /*background: #01B3AF !important;*/
+}
+.strike > span:before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.strike > span:after {
+    left: 100%;
+    margin-left: 15px;
+}
+
+.chatmessage{
+    width: calc(100% - 50px);
+    word-wrap: break-word;
+}
+.userStatus{
+     width: calc(100% + 15px);
+}
+.ch-user{
+    font-size: 24px;
+    color:#B2B2B2;
+    line-height: 0px;
+}
+.chatmainloader{
+    position: relative;
+    top:50%;
+}
+.italic{
+    font-style: italic;
+}
+.message-text{
+   -moz-user-select: text;
+ -khtml-user-select: text;
+ -webkit-user-select: text;
+ -ms-user-select: text;
+ user-select: text;
+ -webkit-user-select: all;  /* Chrome 49+ */
+  -moz-user-select: all;     /* Firefox 43+ */
+  -ms-user-select: all;      /* No support yet */
+  user-select: all;          /* Likely future */
+}

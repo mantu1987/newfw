@@ -15,8 +15,8 @@ class Stuff extends React.Component {
   render() {
     return (
       <div>
-        I am detail Custom Component
-          </div>
+        I am detail Custom Component {this.state.mode.presenceId}
+      </div>
     );
   }
 }
