@@ -12,6 +12,6 @@ export class Item {
         updateProperties kinda method
     }*/
     onConversationChange(){
-        console.log('clicked');
+        console.log('clicked',this.presence);
     }
 }

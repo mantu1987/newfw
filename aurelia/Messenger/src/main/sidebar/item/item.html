@@ -1,5 +1,5 @@
 <template>
-    <div class="badge presenceIcon bg-online pull-right m-r-12" [ngClass]="{'bg-online':presence.availability==='online','bg-offline':presence.availability==='offline','bg-incall':presence.availability==='incall','bg-away':presence.availability==='away'}"></div>
+    <div class="badge presenceIcon bg-online pull-right m-r-12 ${ presence.availability==='online' ? 'bg-online': (presence.availability==='offline'?'bg-offline':(presence.availability==='incall'?'bg-incall':'bg-away')) }" ></div>
     <div class="clear" click.delegate="onConversationChange()">
         <div>
             <a title="${presence.name}" class="conversationDisplayName">${presence.name}</a>
